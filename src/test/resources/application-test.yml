@@ -1,0 +1,4 @@
+ledger:
+  snapshot-every: 5
+  projector:
+    poll-interval: 50ms

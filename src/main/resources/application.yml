@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: account-ledger
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/ledger}
+    username: ${DB_USERNAME:ledger}
+    password: ${DB_PASSWORD:ledger}
+  threads:
+    virtual:
+      enabled: true
+
+ledger:
+  snapshot-every: 50
+  projector:
+    poll-interval: 100ms
+    batch-size: 500
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
